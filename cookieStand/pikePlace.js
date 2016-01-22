@@ -1,7 +1,9 @@
+var shops = []
+
 var sectionEl = document.getElementById("saleListPike");
 var ulEl = document.createElement("ul");
 var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm"];
-var pikePlace = {
+var shop = {
   location: "Pike Place",
   minCustomer: 17,
   maxCustomer: 88,
@@ -9,23 +11,28 @@ var pikePlace = {
   cookiesPerHour: [],
   totalSales: [],
 };
-pikePlace.randomNum = function(min, max) {
-  return Math.random() * (max - min) + min;
+shop.randomNum = function(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
 };
 for (var i = 0; i < hours.length; i++) {
-  var randomCustomerNum = pikePlace.randomNum(pikePlace.minCustomer,pikePlace.maxCustomer);
-  var cookiesSold = Math.floor(randomCustomerNum * pikePlace.aveCookiesPerCustomer);
-  pikePlace.cookiesPerHour.push(hours[i] + ": " + cookiesSold);
+  var randomCustomerNum = shop.randomNum(shop.minCustomer,shop.maxCustomer);
+  var cookiesSold = Math.floor(randomCustomerNum * shop.aveCookiesPerCustomer);
+  shop.cookiesPerHour.push(hours[i] + ": " + cookiesSold);
 };
-  console.log(pikePlace.cookiesPerHour);
+  console.log(shop.cookiesPerHour);
   console.log(cookiesSold);
 // TODO: Turn this into a Render meathod
-for (var i = 0; i < pikePlace.cookiesPerHour.length; i++) {
+
+shop.cookiesPerHour.push("Total: " + cookiesSold)
+for (var i = 0; i < shop.cookiesPerHour.length; i++) {
   var liEl = document.createElement("li");
-  liEl.textContent = pikePlace.cookiesPerHour[i];
+  liEl.textContent = shop.cookiesPerHour[i];
   ulEl.appendChild(liEl);
   sectionEl.appendChild(ulEl);
 }
 // var liElTotal = document.getElementById("li");
-// liElTotal.textContent = "Total: " + pikePlace.cookiesPerHour;
+// liElTotal.textContent = "Total: " + shop.cookiesPerHour;
 // sectionEl.appendChild(ulEl);
+
+
+shops.push(shops);
