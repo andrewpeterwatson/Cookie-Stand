@@ -1,47 +1,44 @@
-// var sectionEl = document.getElementById("saleListPike");
-// var headerEl = document.createElement("h1")
-// var ulEl = document.createElement("ul");
-//
-// var locations = ["Pike Place","SeaTac","Southcenter","Bellevue","Alki"];
-// var minCust = [17,6,11,20,3];
-// var maxCust = [88,24,38,48,24];
-// var aveCook = [5.2,1.2,1.9,3.3,2.6];
-var shops = [["Pike Place","SeaTac","Southcenter","Bellevue","Alki"],[17,6,11,20,3],[88,24,38,48,24],[5.2,1.2,1.9,3.3,2.6]]
-var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm"];
+var sectionEl = document.getElementById("saleListPike");
+var headerEl = document.createElement("h1");
+var ulEl = document.createElement("ul");
 
 function Shop(name, minCustomer, maxCustomer, aveCookPerCus) {
-  this.location = name;
+  this.stores = name;
   this.minCustomer = minCustomer;
   this.maxCustomer = maxCustomer;
   this.aveCookiesPerCustomer = aveCookPerCus;
-  // this.cookiesPerHour = [];
-  // this.totalSales = [];
+  this.cookiesPerHour = [];
+  this.totalSales = [];
+  this.randomNum = function(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  this.getCookies = function() {
+    for (var i = 0; i < hours.length; i++) {
+      var randomCustomerNum = this.randomNum(this.minCustomer,this.maxCustomer);
+      var cookiesSold = Math.floor(randomCustomerNum * this.aveCookiesPerCustomer);
+      this.cookiesPerHour.push(hours[i] + ": " + cookiesSold);
+    }
+  }
+};
+var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm"];
+var locations = ["Pike Place","SeaTac","Southcenter","Bellevue","Alki"];
+var minCust = [17,6,11,20,3];
+var maxCust = [88,24,38,48,24];
+var aveCook = [5.2,1.2,1.9,3.3,2.6];
+var newShops = [];
+for (var i = 0; i < locations.length; i++) {
+  newShops.push(new Shop(locations[i],minCust[i],maxCust[i],aveCook[i]));
 }
-console.log(Shop);
-for (var i = 0; i < shops.length; i++) {
-var newShops = new Shop(shops[0], shops[1], shops[2], shops[3]);
-}
-
-
-// this.randomNum = function(min, max) {
-//   return Math.random() * (max - min) + min;
-// };
-// for (var i = 0; i < hours.length; i++) {
-//   randomCustomerNum = this.randomNum(this.minCustomer,this.maxCustomer);
-//   var cookiesSold = Math.floor(randomCustomerNum * this.aveCookiesPerCustomer);
-//   this.cookiesPerHour.push(hours[i] + ": " + cookiesSold);
-// };
-// this.totalSales.push(Math.floor(cookiesSold * randomCustomerNum));
-// this.cookiesPerHour.push("Total: " + this.totalSales)
-// headerEl.textContent = this.location;
+newShops[i].totalSales.push(Math.floor(cookiesSold * randomCustomerNum));
+newShops[i].cookiesPerHour.push("Total: " + newShops.totalSales);
+// headerEl.textContent = newShops.stores;
 // sectionEl.appendChild(headerEl);
-// for (var i = 0; i < this.cookiesPerHour.length; i++) {
+// for (var i = 0; i < newShops.length; i++) {
 //   var liEl = document.createElement("li");
-//   liEl.textContent = this.cookiesPerHour[i];
+//   liEl.textContent = newShops.cookiesPerHour[i];
 //   ulEl.appendChild(liEl);
 //   sectionEl.appendChild(ulEl);
 // }
-
 
 
 // Object Literal
