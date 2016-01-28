@@ -1,5 +1,7 @@
-var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm"];
+var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 var locations = ["Pike Place","SeaTac","Southcenter","Bellevue","Alki"];
+var storeId = ["pp", "st", "sc", "bl", "al"];
+var liId = ["ppP", "stP", "scP", "blP", "alP"];
 var minCust = [17,6,11,20,3];
 var maxCust = [88,24,38,48,24];
 var aveCook = [5.2,1.2,1.9,3.3,2.6];
@@ -10,7 +12,7 @@ function Shop(name, minCustomer, maxCustomer, aveCookPerCus) {
   this.maxCustomer = maxCustomer;
   this.aveCookiesPerCustomer = aveCookPerCus;
   this.cookiesPerHour = [];
-  this.totalCookies = [];
+  this.totalCookies = 0;
   this.randomNum = function(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -28,26 +30,29 @@ function Shop(name, minCustomer, maxCustomer, aveCookPerCus) {
 for (var i = 0; i < locations.length; i++) {
   newShops.push(new Shop(locations[i],minCust[i],maxCust[i],aveCook[i]));
 
-  var sectionEl = document.getElementById("saleList");
-  var headerEl = document.createElement("h1");
-  var ulEl = document.createElement("ul");
-  var headerUl = document.createElement("ul")
-}
-Shop.prototype.render = function() {
-  for (var i = 0; i < newShops.length; i++) {
-    var headerLi = document.createElement("li");
-    headerLi.textContent = newShops[i].stores;
-    headerEl.appendChild(headerLi);
-    sectionEl.appendChild(headerEl);
-  for (var i = 0; i < newShops.cookiesPerHour.length; i++) {
-    var liEl = document.createElement("li");
-    liEl.textContent = newShops[i].cookiesPerHour[i];
-    ulEl.appendChild(liEl);
-    sectionEl.appendChild(ulEl);
-    }
   }
-};
-for (var i = 0; i < newShops.length; i++) {
-  newShops[i].getCookies();
-}
-Shop.prototype.render();
+
+  Shop.prototype.render = function() {
+    var headerH1 = document.createElement("h1")
+    var sectionEl = document.getElementById("saleList");
+    var ulEl = document.createElement("ul");
+    for (var i = 0; i < newShops.length; i++) {
+      var liEl = document.createElement("li");
+      liEl.textContent = this.stores;
+      var nestedUl = document.createElement("ul");
+
+    for (var i = 0; i < this.cookiesPerHour.length; i++) {
+      var nestedLi = document.createElement("li");
+      nestedLi.textContent = this.cookiesPerHour[i];
+      nestedUl.appendChild(nestedLi);
+    }
+      ulEl.appendChild(nestedUl);
+      headerH1.appendChild(liEl);
+      ulEl.appendChild(headerH1)
+    }
+    sectionEl.appendChild(ulEl);
+  }
+  for (var i = 0; i < newShops.length; i++) {
+    newShops[i].getCookies();
+    newShops[i].render();
+  }
