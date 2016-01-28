@@ -52,8 +52,8 @@ for (var i = 0; i < locations.length; i++) {
         // cookiesTrEl.appendChild(cookiesTdEl);
         shopsTrEl.appendChild(cookiesTdEl);
     }
-    salesTable.appendChild(shopsTrEl);
     salesTable.appendChild(hoursTrEl);
+    salesTable.appendChild(shopsTrEl);
     }
   };
   //SPACES
