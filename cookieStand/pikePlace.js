@@ -56,32 +56,6 @@ for (var i = 0; i < locations.length; i++) {
     salesTable.appendChild(shopsTrEl);
     }
   };
-  //SPACES
-  // var spaceEl = document.createElement("th");
-  // spaceEl.textContent = "";
-  // trElHead.appendChild(spaceEl);
-
-
-  // Shop.prototype.render = function() {
-  //   var headerH1 = document.createElement("h1")
-  //   var sectionEl = document.getElementById("salesTable");
-  //   var trEl = document.createElement("tr");
-  //   for (var i = 0; i < newShops.length; i++) {
-  //     var thEl = document.createElement("th");
-  //     thEl.textContent = this.stores;
-  //     headerH1.appendChild(thEl);
-  //     var nestedTr = document.createElement("tr");
-  //
-  //   for (var i = 0; i < this.cookiesPerHour.length; i++) {
-  //     var nestedTd = document.createElement("td");
-  //     nestedTd.textContent = this.cookiesPerHour[i];
-  //     nestedTr.appendChild(nestedTd);
-  //   }
-  //   trEl.appendChild(headerH1)
-  //     trEl.appendChild(nestedTr);
-  //   }
-  //   sectionEl.appendChild(trEl);
-  // }
   for (var i = 0; i < 1; i++) {
     newShops[i].getCookies();
     newShops[i].render();
