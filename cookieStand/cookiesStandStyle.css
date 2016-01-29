@@ -1,0 +1,18 @@
+body {
+  background-color: #ecd4b4
+}
+#tableGlobal {
+  height: 20em;
+  width: 50em;
+  margin-top: 10%;
+  margin-left: 16%;
+  text-align: center;
+  background-color: #acaba8;
+}
+#newShopInfo {
+  /*border: 1px solid blue;*/
+}
+#salesTable {
+  /*border: 1px solid blue;*/
+margin-left: 32%;
+}
