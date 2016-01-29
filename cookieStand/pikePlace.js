@@ -1,3 +1,22 @@
+var newShopForm = document.getElementById("NewShopInfo");
+var nameInput = document.getElementById("storeName");
+var newShopInput = document.getElementById("shopNameId");
+var minCustInput = document.getElementById("minCustId");
+var maxCustInput = document.getElementById("maxCustId");
+var aveCustInput = document.getElementById("aveCookId");
+newShopForm.addEventListener("submit", function() {
+  event.preventDefault();
+  console.log(newShopInput.value, minCustInput.value,maxCustInput.value,aveCustInput.value);
+  locations.unshift(newShopInput.value);
+  minCust.unshift(minCustInput.value);
+  maxCust.unshift(maxCustInput.value);
+  aveCook.unshift(aveCustInput.value);
+  newShops.unshift(new Shop(locations[0],minCust[0],maxCust[0],aveCook[0]));
+  for (var i = 0; i < 1; i++) {
+    newShops[0].getCookies();
+    newShops[0].render();
+  }
+});
 var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 var locations = ["Pike Place","SeaTac","Southcenter","Bellevue","Alki"];
 var minCust = [17,6,11,20,3];
@@ -56,32 +75,6 @@ for (var i = 0; i < locations.length; i++) {
     salesTable.appendChild(shopsTrEl);
     }
   };
-  //SPACES
-  // var spaceEl = document.createElement("th");
-  // spaceEl.textContent = "";
-  // trElHead.appendChild(spaceEl);
-
-
-  // Shop.prototype.render = function() {
-  //   var headerH1 = document.createElement("h1")
-  //   var sectionEl = document.getElementById("salesTable");
-  //   var trEl = document.createElement("tr");
-  //   for (var i = 0; i < newShops.length; i++) {
-  //     var thEl = document.createElement("th");
-  //     thEl.textContent = this.stores;
-  //     headerH1.appendChild(thEl);
-  //     var nestedTr = document.createElement("tr");
-  //
-  //   for (var i = 0; i < this.cookiesPerHour.length; i++) {
-  //     var nestedTd = document.createElement("td");
-  //     nestedTd.textContent = this.cookiesPerHour[i];
-  //     nestedTr.appendChild(nestedTd);
-  //   }
-  //   trEl.appendChild(headerH1)
-  //     trEl.appendChild(nestedTr);
-  //   }
-  //   sectionEl.appendChild(trEl);
-  // }
   for (var i = 0; i < 1; i++) {
     newShops[i].getCookies();
     newShops[i].render();
