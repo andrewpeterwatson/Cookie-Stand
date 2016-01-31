@@ -80,7 +80,7 @@ for (var i = 0; i < newShops.length; i++) {
           tableTrEl.appendChild(tableTdEl);
         }
         var totalTdEl = document.createElement("td");
-        totalTdEl.textContent = this.totalCookies[i];
+        totalTdEl.textContent = this.totalCookies;
         tableTrEl.appendChild(totalTdEl);
 
         tBodyEl.appendChild(tableTrEl);
