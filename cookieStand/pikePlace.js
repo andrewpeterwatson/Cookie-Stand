@@ -50,7 +50,6 @@ for (var i = 0; i < locations.length; i++) {
   newShops.push(new Shop(locations[i],minCust[i],maxCust[i],aveCook[i]));
 
   }
-
     var tableEl = document.getElementById("salesTable");
     var tHeadEl = document.createElement("thead");
     var tBodyEl = document.createElement("tbody");
