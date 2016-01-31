@@ -1,0 +1,47 @@
+li {
+  font-size: 2em;
+}
+#navBar {
+  /*width: 30em;*/
+  margin-top: 5em;
+  margin-left: 11.5em;
+  position: fixed;
+}
+#backdrop {
+  background-color: rgba(350, 65, 45, 0.65);
+  height: 41em;
+  width: 75em;
+  margin: 2em;
+}
+#pikePic {
+  opacity: 0.25;
+  height: 463px;
+  width: 60em;
+  position: fixed;
+}
+#logo {
+  text-align: center;
+}
+#aboutBack {
+  box-shadow: inset 2px 2px 30px 5px;
+  background-color: #585751;
+  height: 463px;
+  width: 60em;
+  margin-top: 7em;
+  margin-left: 9.5em;
+  position: fixed;
+}
+.navLi {
+  padding: 1em;
+  display: inline;
+  list-style: none;
+  border: 1px dashed black;
+}
+#aboutContent {
+  background-color: slategrey;
+  width: 30em;
+  height: 15em;
+  margin-top: 10em;
+  margin-left: 13em;
+  position: fixed;
+}
