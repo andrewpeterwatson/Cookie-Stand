@@ -1,17 +1,11 @@
-<<<<<<< HEAD
-body {
-  background-color: #ecd4b4
-}
-=======
 
->>>>>>> b3bf69cfb2a25a59909b94eae6f0c1eebbaf3e78
 #tableGlobal {
   height: 20em;
   width: 50em;
-  margin-top: 10%;
-  margin-left: 16%;
+  margin-top: 0%;
+  margin-left: 0%;
   text-align: center;
-  background-color: #acaba8;
+  background-color: #e4eff1;
 }
 #newShopInfo {
   /*border: 1px solid blue;*/

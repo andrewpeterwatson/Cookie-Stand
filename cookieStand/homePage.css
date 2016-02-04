@@ -1,12 +1,19 @@
 html {
   background-color: #e4eff1;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
+#navHome {
+  text-decoration: underline;
+}
 #plainText {
   font-family: 'Tulpen One', cursive;
-  font-size: 1.5em;
+  font-size: 5em;
   text-align: left;
-  margin-top: 10%;
-  margin-left: 2%;
+  margin-top: 5%;
+  margin-left: 8%;
 }
 /*#contentPage {
   margin-top: 30%;
@@ -148,13 +155,65 @@ h1 {
 }
 #fish1 {
   /*background-color: red;*/
-  height: 282px;
+  height: 450px;
   width: 250px;
-  margin-left: 20%;
-  margin-top: 20%;
+  margin-left: 10%;
+  margin-top: 8%;
   position: fixed;
-  background-image: url('file://Macintosh HD/Users/andrewwatson/Desktop/fish1.png')
+  background-image: url('file://Macintosh HD/Users/andrewwatson/Desktop/fish1.png');
+  -webkit-animation: fishTravel 2s linear infinite;
+  animation-timing-function: cubic-bezier(.65, 1, .55, .10);
 }
+#fish1Wrap {
+  -webkit-animation: fishBounce .5s linear 1;
+  margin-left: -2%;
+}
+@-webkit-keyframes fishTravel {
+  0%   {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(-360deg);
+      -ms-transform: rotate(-360deg);
+      transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes fishBounce {
+  0% { -webkit-transform: translateX(15px); }
+  /*50% { -webkit-transform: translateX(50px); }  */
+  100% { -webkit-transform: translateY(0px); }
+}
+#fish2 {
+  /*background-color: red;*/
+  height: 450px;
+  width: 250px;
+  margin-left: 10%;
+  margin-top: 8%;
+  position: fixed;
+  background-image: url('file://Macintosh HD/Users/andrewwatson/Desktop/fish2.png');
+  -webkit-animation: fishTravel2 1.5s linear infinite;
+  animation-timing-function: cubic-bezier(.65, 1, .55, .10);
+}
+#fish2Wrap {
+  -webkit-animation: fishBounce .5s linear 1;
+  margin-left: -2%;
+}
+@-webkit-keyframes fishTravel2 {
+  0%   {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(-0deg);
+      transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+
+
 @-webkit-keyframes spin {
     0%   {
         -webkit-transform: rotate(0deg);
@@ -180,7 +239,7 @@ h1 {
     }
 }
 #waterElFront {
-   -webkit-animation: spin 40s linear infinite;
+  -webkit-animation: spin 110s linear infinite;
   }
 #waterEl2 {
   -webkit-animation: spin 110s linear infinite;
